@@ -1,7 +1,6 @@
 import homePage from '../page/homePage/index'
-import otherPage from '../page/otherPage/index'
-import Three from '../page/threePage/index'
-import Four from '../page/fourPage/index'
+import choicePage from '../page/choicePage/index'
+import mapPage from '../page/mapPage/index'
 
 
 const baseRoute = [
@@ -11,20 +10,14 @@ const baseRoute = [
     exact: true
   },
   {
-    path: "/other",
-    component: otherPage,
-    children: [
-      {
-        path: "/other",
-        component: Three,
-        exact: true
-      },
-      {
-        path: "/other/two",
-        component: Four
-      }
-    ]
+    path: "/choice",
+    component: choicePage
+  },
+  {
+    path: "/map",
+    component: mapPage
   }
+
 ]
 
 
