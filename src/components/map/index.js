@@ -1,15 +1,19 @@
 import React from 'react'
-const image = require('../../assets/image/test.jpg')
-const icon = require('../../assets/image/icon.jpg')
+import style from './style.less'
+import coordinate from './coordinate'
+const image = require('../../assets/image/map.png')
+const icon = require('../../assets/image/torch.png')
 
 class Map extends React.Component{
   constructor(props) {
     super(props)
     this.state={
       width: window.innerWidth,
-      height: window.innerWidth*(10/16),
+      height: window.innerWidth*(12/16),
       canvaswidth: window.innerWidth,
-      canvasheight: window.innerWidth*(10/16)
+      canvasheight: window.innerWidth*(12/16),
+      x: null,
+      y: null
     }
     this.initCanvas = this.initCanvas.bind(this)
   }
@@ -21,15 +25,25 @@ class Map extends React.Component{
     drawimage.src = image
     drawIcon.src = icon
     drawimage.onload = () => {
-      canvas.drawImage(drawimage,0,0,this.state.canvaswidth,this.state.canvasheight)
+      canvas.drawImage(drawimage,50,50,this.state.canvaswidth-100,this.state.canvasheight-100)
     }
 
     drawIcon.onload = () => {
-      canvas.drawImage(drawIcon,this.state.canvaswidth*0.2,this.state.canvasheight*0.4,this.state.canvaswidth*0.25,this.state.canvasheight*0.45)
+      canvas.drawImage(drawIcon,this.state.canvaswidth*`${this.state.x}`,this.state.canvasheight*`${this.state.y}`)
     }
   }
 
   componentDidMount() {
+    const city = this.props.city
+    let item = null
+    for(item of coordinate){
+      if(item.city === city){
+        this.setState({
+          x: item.coordinate.x,
+          y: item.coordinate.y
+        })
+      }
+    }
     this.initCanvas()
   }
   componentDidUpdate() {
@@ -38,7 +52,7 @@ class Map extends React.Component{
   render() {
     const { width, height, canvaswidth, canvasheight } = this.state
     return (
-      <div style={{ width: width, height: height}}>
+      <div style={{ width: width, height: height}} className={style.map}>
         <canvas id="time_graph_canvas" width={canvaswidth} height={canvasheight}></canvas>
       </div>
     )

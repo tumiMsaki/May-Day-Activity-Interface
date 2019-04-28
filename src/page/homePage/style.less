@@ -1,0 +1,95 @@
+@font-face{
+  font-family: 'pingfang';
+  src: url('../../assets/font/pingfangcu.ttf')
+}
+p{
+  margin: 0;
+  text-align: center;
+  font-family: 'pingfang';
+  font-weight: 900;
+}
+.content{
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  padding-top: 0.3rem;
+  flex:0.8;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  p{
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
+main{
+  box-sizing: content-box;
+  margin-top: 0.8rem;
+  flex:2;
+  padding: 0.2rem 0.5rem;
+  flex-direction: column;
+  display: flex;
+}
+.main_topContent{
+  padding: 0.1rem;
+  display: flex;
+  align-items:center;
+  justify-content: space-between
+}
+.main_bottomContent{
+  margin-top: 0.8rem;
+  text-align: center;
+  p{
+    font-size: 0.3rem;
+    margin: 0.1rem;
+  }
+}
+.midword{
+  height: 6.5rem;
+  width: 3.4rem;
+  border:1px solid red;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  p{
+    writing-mode:tb-rl;
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+.portrait{
+  margin-top: 1rem;
+  height: 1.9rem;
+  width: 1.9rem;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+
+footer{
+  flex: 0.3;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  height: 1.4rem;
+  width: 5.5rem;
+  font-size: 0.5rem;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 0.9rem;
+  a{
+    text-decoration:none;
+  }
+}

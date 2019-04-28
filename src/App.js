@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import routes from './router/index'
+import Head from './page/head/index'
+import style from './index.less'
 
 
 class App extends React.Component {
   render(){
     return(
-      <div>
+      <div className={style.content}>
+      <Head></Head>
         <Router>
           <div>
             {
