@@ -1,6 +1,7 @@
 import homePage from '../page/homePage/index'
 import choicePage from '../page/choicePage/index'
 import mapPage from '../page/mapPage/index'
+import Home from '../page/home/index'
 
 
 const baseRoute = [
