@@ -1,18 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import routes from './router/index'
 import Head from './page/head/index'
-import style from './index.less'
+import './index.less'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 
-class App extends React.Component {
-  render(){
-    return(
-      <div className={style.content}>
-      <Head></Head>
-        <Router>
-          <div>
-            {
+const AnimationRoute = () => (
+  <div className="app">
+  <Head></Head>
+  <Router>
+    <Route
+      render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.pathname}
+                classNames="fade"
+                timeout={400}
+              >
+                <Switch location={location}>
+                {
               routes.map((route, key) => {
                 if(route.exact){
                   return <Route key={key} exact path={route.path} component={route.component}></Route>
@@ -21,11 +28,16 @@ class App extends React.Component {
                 }
               })
             }
-          </div>
-        </Router>
-      </div>
-    )
-  }
-}
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+      )}
+    />
+  </Router>
+  </div>
+);
 
-export default App;
+
+
+
+export default AnimationRoute;

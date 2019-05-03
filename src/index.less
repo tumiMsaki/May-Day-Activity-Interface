@@ -1,11 +1,54 @@
+@font-face{
+  font-family: 'pingf';
+  src: url('./assets/font/苹方字体.ttf')
+}
 body{
   margin: 0;
-  height: 100vh;
-}
-
-.content{
+  box-sizing: border-box;
+  padding: 0.41rem 0.53rem;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: url('./assets/image/banner.png') no-repeat center;
+  background-size: 100% 100%;
+}
+:global{
+  .appAppear-appear{
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .appAppear-appear.appAppear-appear-active{
+    opacity: 1;
+    transform: scale(1);
+    transition: 400ms ease-out;
+  }
+  
+  /*设置进场前透明度为0，放缩为0*/
+  
+  .fade-enter {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  
+  /*设置进场过程中 透明度为1，放缩为1，放缩的位置为左上角，持续时间为500ms，时间曲是ease-out */
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    // transform-origin: left;
+    transition: 400ms ease-out;
+  }
+  
+  /*设置退场前透明度为1，放缩为1*/
+  .fade-exit{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /*设置退场过程中 透明度为0，放缩为0，放缩的位置默认是中间，所以不设置也可以，
+  持续时间为500ms，时间曲是ease-out */
+  .fade-exit.fade-exit-active{
+    opacity:0;
+    transform: scale(0);
+    transition: 400ms ease-out;
+  }
 }

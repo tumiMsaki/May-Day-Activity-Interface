@@ -183,6 +183,11 @@ module.exports = function(webpackEnv) {
         : isEnvDevelopment &&
           (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
     },
+    externals: {
+      AMap: 'AMap',
+      AMapUI: 'AMapUI',
+      ECharts: 'echarts',
+    },
     optimization: {
       minimize: isEnvProduction,
       minimizer: [

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name=”viewport” content=”width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no”/>
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="theme-color" content="#000000" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -17,7 +17,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>五一活动</title>
+    <title>青春心向党 建功新时代</title>
     <style>
       #root{
         height: 100%;
@@ -38,4 +38,31 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://wx.idsbllp.cn/wx-api/share.js"></script>
+    <script>
+      WXSHARE.config({
+          debug: false
+      });
+      WXSHARE.ready(function () {
+          var option = {
+              title: "青春心向党 建功新时代",
+              link: "https://wx.idsbllp.cn/game/api/index.php?redirect=https://stu.tumiv.cn",
+              imgUrl: 'https://stu.tumiv.cn/static/media/torch.2afbac21.png',
+              desc: 'xxx',
+              type: '',
+              success: function () {
+                  console.log('分享成功');
+              },
+              cancel: function () {
+                  console.log('取消分享');
+              },
+          };
+          wx.onMenuShareTimeline(option);
+          wx.onMenuShareAppMessage(option);
+          wx.onMenuShareQQ(option);
+          wx.onMenuShareWeibo(option);
+          wx.onMenuShareQZone(option);
+      });
+  </script>
 </html>

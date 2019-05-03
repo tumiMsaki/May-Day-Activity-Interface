@@ -1,14 +1,58 @@
-header{
-  box-sizing: border-box;
-  height: 25vh;
-  padding-top: 0.7rem;
-  flex:0.8;
+@font-face{
+  font-family: 'head';
+  src: url('../../assets/font/HYXiaoBoHuaBaoHeiW.ttf');
+}
+.content{
   display: flex;
   align-items:center;
   flex-direction: column;
   justify-content: center;
-  p{
-    margin: 0;
-    font-size: 1.1rem;
+  .icon{
+    position: absolute;
+    top: 0.35rem;
+    left: 0.55rem;
+    height: 1.1rem;
+    width: 1.2rem;
+    background: url('../../assets/image/flag.png') no-repeat center;
+    background-size: 100%;
   }
+  header{
+    box-sizing: border-box;
+    padding-top: 0.4rem;
+    height: 4em;
+    width: 8.5rem;
+    background: url('../../assets/image/head.png') no-repeat center;
+    background-size: 100%;
+    div{
+      text-align: center;
+      height: 1rem;
+    }
+    p{
+      font-family: 'head';
+      margin: 0 0.05rem;
+      display: inline-block;
+      font-size: 0.95rem;
+      color: #fff;
+      text-shadow:4px 4px 0 #9a7352, -4px -4px 0 #9a7352,4px -4px 0 #9a7352,-4px 4px 0 #9a7352;
+    }
+  }
+}
+
+.one{
+  transform: translateY(0.1rem) rotate(-10deg);
+}
+.two{
+  transform: translateY(-0.1rem) rotate(-5deg);
+}
+.three{
+  transform: translateY(-0.15rem) rotate(-2.5deg);
+}
+.four{
+  transform: translateY(-0.15rem) rotate(2.5deg);
+}
+.five{
+  transform: translateY(-0.1rem) rotate(5deg);
+}
+.six{
+  transform: translateY(0.1rem) rotate(10deg);
 }

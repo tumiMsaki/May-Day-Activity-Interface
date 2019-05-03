@@ -6,9 +6,24 @@ class head extends React.Component{
   render(){
     return(
       <div className={style.content}>
+      <div className={style.icon}></div>
           <header>
-            <p>传递五四火炬</p>
-            <p>弘扬五四精神</p>
+            <div>
+              <p className={style.one}>传</p>
+              <p className={style.two}>递</p>
+              <p className={style.three}>五</p>
+              <p className={style.four}>四</p>
+              <p className={style.five}>火</p>
+              <p className={style.six}>炬</p>
+            </div>
+            <div>
+              <p className={style.one}>弘</p>
+              <p className={style.two}>扬</p>
+              <p className={style.three}>五</p>
+              <p className={style.four}>四</p>
+              <p className={style.five}>精</p>
+              <p className={style.six}>神</p>
+            </div>
           </header>
       </div>
     )
