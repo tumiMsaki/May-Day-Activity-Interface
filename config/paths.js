@@ -34,7 +34,7 @@ const getPublicUrl = appPackageJson =>
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
   const servedUrl =
-    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/kindle');
+    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/game/kindle');
   return ensureSlash(servedUrl, true);
 }
 
